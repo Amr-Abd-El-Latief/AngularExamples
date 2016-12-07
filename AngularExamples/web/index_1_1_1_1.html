@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="gemStoreImg">
+  <head>
+     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="jsModules/app_1_1_1.js"></script>
+ 
+  </head>
+  <!DOCTYPE html>
+  <body ng-controller="StoreController as store">
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>
+          {{product.name}}
+          <em class="pull-right">{{product.price | currency}}</em>
+        </h3>
+
+        <!-- Image Gallery  -->          <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[0]}}" />
+          <ul class="clearfix">
+            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
+          </ul>
+        </div>
+      </div>
+
+  </body>
+</html>
